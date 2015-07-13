@@ -102,20 +102,4 @@ public final class PolishLight {
       }
         return(originalWord.toString());
     }
-    static public void main(String[] arg) {
-    	PolishLight ns = new PolishLight();
-        System.out.println(ns.stem("panowie"));
-        System.out.println(ns.stem("aktorowi"));
-        System.out.println(ns.stem("kotami"));
-        System.out.println(ns.stem("kotach"));     
-        System.out.println(ns.stem("wodżie"));
-        System.out.println(ns.stem("autobuśem"));
-        System.out.println(ns.stem("aktorom"));
-        System.out.println(ns.stem("kotow")); 
-        System.out.println(ns.stem("aktokze"));
-        System.out.println(ns.stem("aktorzy"));
-        System.out.println(ns.stem("kotami"));
-        System.out.println(ns.stem("Rośłjanin"));
-     
-      }
 }

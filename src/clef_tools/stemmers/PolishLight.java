@@ -8,64 +8,64 @@ public class PolishLight {
 
 	  static private StringBuilder stem = new StringBuilder();
 
-	  public PolishLight() {
-	  }
-	public String stem(String originalWord) {
-	
-	    if (originalWord.length() < 3)
-	        return originalWord;
-	      String res = stemmed.get(originalWord);
-	      if (res == null) {
-		        stem.delete(0, stem.length());
-		        stem.append(originalWord);
-		        String word = remove_accent(stem);
-		        if (originalWord.length() < 3)
-			        return originalWord;
+    public PolishLight() {
+    }
 
-	        // First rule
-		         if (originalWord.length() > 6 && (word.endsWith("owie"))){		      
-		            stem.delete(word.length() - 4, word.length()); 
-		            word = stem.toString();
-		            if (stem.length()>4 && (word.endsWith("ia")||word.endsWith("ie")||word.endsWith("iu"))){
-		          	  stem.delete(word.length() - 3, word.length());  
-		           } else if (stem.length()>3 &&(word.endsWith("a")||word.endsWith("u")||word.endsWith("i")||word.endsWith("e")||word.endsWith("o")||word.endsWith("y"))){
-			              stem.delete(word.length() - 1, word.length());          
-			          }
-		  }       else if (originalWord.length() > 6 && (word.endsWith("owi")||word.endsWith("ami"))){		      
-		  			          stem.delete(word.length() - 3, word.length());  
-		  			          word = stem.toString();
-		  			        if (stem.length()>4 && (word.endsWith("ia")||word.endsWith("ie")||word.endsWith("iu"))){
-		  		          	  stem.delete(word.length() - 3, word.length());  
-		  		           } else if (stem.length()>3 &&(word.endsWith("a")||word.endsWith("u")||word.endsWith("i")||word.endsWith("e")||word.endsWith("o")||word.endsWith("y"))){
-		  			              stem.delete(word.length() - 1, word.length());          
-		  			          }       	              
-		  	          }
-		  else if (originalWord.length() > 5 && (word.endsWith("ach")|| word.endsWith("zie"))){
-	          stem.delete(word.length() - 3, word.length());   
-	          word = stem.toString();
-	          if (stem.length()>4 && (word.endsWith("ia")||word.endsWith("ie")||word.endsWith("iu"))){
-	          	  stem.delete(word.length() - 3, word.length());  
-	           } else if (stem.length()>3 &&(word.endsWith("a")||word.endsWith("u")||word.endsWith("i")||word.endsWith("e")||word.endsWith("o")||word.endsWith("y"))){
-		              stem.delete(word.length() - 1, word.length());          
-		          }
-	      } else if (originalWord.length() > 4 && (word.endsWith("em")|| word.endsWith("om")||word.endsWith("ow")|| word.endsWith("ze")||word.endsWith("zy")|| word.endsWith("mi")|| word.endsWith("in"))){		      
-	          stem.delete(word.length() - 2, word.length());  
-	          word = stem.toString();
-	          if (stem.length()>4 && (word.endsWith("ia")||word.endsWith("ie")||word.endsWith("iu"))){
-	          	  stem.delete(word.length() - 3, word.length());  
-	           } else if (stem.length()>3 &&(word.endsWith("a")||word.endsWith("u")||word.endsWith("i")||word.endsWith("e")||word.endsWith("o")||word.endsWith("y"))){
-		              stem.delete(word.length() - 1, word.length());          
-		          }
-	       
-      } 
-	        res = stem.toString();
-	        stemmed.put(originalWord, res);
-	        
-	      }
+    public String stem(String originalWord) {
 
-	      return res;		
-	}
-		
+        if (originalWord.length() < 3)
+            return originalWord;
+        String res = stemmed.get(originalWord);
+        if (res == null) {
+            stem.delete(0, stem.length());
+            stem.append(originalWord);
+            String word = remove_accent(stem);
+            if (originalWord.length() < 3)
+                return originalWord;
+
+            // First rule
+            if (originalWord.length() > 6 && (word.endsWith("owie"))) {
+                stem.delete(word.length() - 4, word.length());
+                word = stem.toString();
+                if (stem.length() > 4 && (word.endsWith("ia") || word.endsWith("ie") || word.endsWith("iu"))) {
+                    stem.delete(word.length() - 3, word.length());
+                } else if (stem.length() > 3 && (word.endsWith("a") || word.endsWith("u") || word.endsWith("i") || word.endsWith("e") || word.endsWith("o") || word.endsWith("y"))) {
+                    stem.delete(word.length() - 1, word.length());
+                }
+            } else if (originalWord.length() > 6 && (word.endsWith("owi") || word.endsWith("ami"))) {
+                stem.delete(word.length() - 3, word.length());
+                word = stem.toString();
+                if (stem.length() > 4 && (word.endsWith("ia") || word.endsWith("ie") || word.endsWith("iu"))) {
+                    stem.delete(word.length() - 3, word.length());
+                } else if (stem.length() > 3 && (word.endsWith("a") || word.endsWith("u") || word.endsWith("i") || word.endsWith("e") || word.endsWith("o") || word.endsWith("y"))) {
+                    stem.delete(word.length() - 1, word.length());
+                }
+            } else if (originalWord.length() > 5 && (word.endsWith("ach") || word.endsWith("zie"))) {
+                stem.delete(word.length() - 3, word.length());
+                word = stem.toString();
+                if (stem.length() > 4 && (word.endsWith("ia") || word.endsWith("ie") || word.endsWith("iu"))) {
+                    stem.delete(word.length() - 3, word.length());
+                } else if (stem.length() > 3 && (word.endsWith("a") || word.endsWith("u") || word.endsWith("i") || word.endsWith("e") || word.endsWith("o") || word.endsWith("y"))) {
+                    stem.delete(word.length() - 1, word.length());
+                }
+            } else if (originalWord.length() > 4 && (word.endsWith("em") || word.endsWith("om") || word.endsWith("ow") || word.endsWith("ze") || word.endsWith("zy") || word.endsWith("mi") || word.endsWith("in"))) {
+                stem.delete(word.length() - 2, word.length());
+                word = stem.toString();
+                if (stem.length() > 4 && (word.endsWith("ia") || word.endsWith("ie") || word.endsWith("iu"))) {
+                    stem.delete(word.length() - 3, word.length());
+                } else if (stem.length() > 3 && (word.endsWith("a") || word.endsWith("u") || word.endsWith("i") || word.endsWith("e") || word.endsWith("o") || word.endsWith("y"))) {
+                    stem.delete(word.length() - 1, word.length());
+                }
+
+            }
+            res = stem.toString();
+            stemmed.put(originalWord, res);
+
+        }
+
+        return res;
+    }
+
     private String remove_accent(StringBuilder originalWord)
     {
         int len = originalWord.length() - 1;

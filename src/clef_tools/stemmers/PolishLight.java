@@ -3,20 +3,16 @@ package clef_tools.stemmers;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-public class PolishLight {
-	  static private Map<String, String> stemmed = new WeakHashMap<String, String>();
+public final class PolishLight {
 
-	  static private StringBuilder stem = new StringBuilder();
+    private PolishLight() {}
 
-    public PolishLight() {
-    }
-
-    public String stem(String originalWord) {
+    public static String stem(String originalWord) {
 
         if (originalWord.length() < 3)
             return originalWord;
-        String res = stemmed.get(originalWord);
-        if (res == null) {
+        else {
+            StringBuilder stem = new StringBuilder();
             stem.delete(0, stem.length());
             stem.append(originalWord);
             String word = remove_accent(stem);
@@ -58,15 +54,11 @@ public class PolishLight {
                 }
 
             }
-            res = stem.toString();
-            stemmed.put(originalWord, res);
-
+            return stem.toString();
         }
-
-        return res;
     }
 
-    private String remove_accent(StringBuilder originalWord)
+    private static String remove_accent(StringBuilder originalWord)
     {
         int len = originalWord.length() - 1;
         for(int i = 0; i<= len; i++){

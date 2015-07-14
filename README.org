@@ -4,6 +4,12 @@
 
   http://members.unine.ch/jacques.savoy/clef/
 
+  Developed for use in the [[http://github.com/lopusz/langlab][langlab]] project.
+
+  This library was deployed to Clojars
+
+  [[http://clojars.org/clef-tools][http://clojars.org/clef-tools/latest-version.svg]]
+
 * License
 
   The BSD 2-Clause License (see http://www.opensource.org/licenses/bsd-license.html),

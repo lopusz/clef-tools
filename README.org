@@ -1,4 +1,4 @@
-* clef_tools
+* clef-tools
 
   This project contains language tools collected by Prof. Jacques Savoy
 
@@ -6,4 +6,4 @@
 
 * License
 
-  BSD License (see http://www.opensource.org/licenses/bsd-license.html),
+  The BSD 2-Clause License (see http://www.opensource.org/licenses/bsd-license.html),

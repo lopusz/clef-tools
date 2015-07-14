@@ -1,4 +1,4 @@
-(defproject clef-tools "0.1.0"
+(defproject clef-tools "0.2.0"
 
   ; GENERAL OPTIONS
 
